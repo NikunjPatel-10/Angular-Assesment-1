@@ -1,0 +1,61 @@
+<h1 class='d-flex justify-content-center'>Employee-form page</h1>
+<div class="container border mt-5">
+    <form class="row g-3" [formGroup]="userForm">
+        <!-- firstname started here -->
+        <div>
+            <label for="validationServer01" class="form-label">Name</label>
+            <input type="text" class="form-control " id="validationServer01" formControlName="name"
+                [ngClass]="{'is-valid': userFormControl['name'].valid, 'is-invalid': userFormControl['name'].invalid && userFormControl['name'].touched }">
+            <div class="text-danger"
+                *ngIf="userFormControl['name'].invalid && (isSubmitted || userFormControl['name'].touched || userFormControl['name'].dirty)">
+                <div *ngIf="userFormControl['name'].errors?.['required']">name is required</div>
+                <div *ngIf="userFormControl['name'].errors?.['minlength']">Minimum 3 Characters are required</div>
+                <div *ngIf="userFormControl['name'].errors?.['pattern']">Only Characters are allowed </div>
+
+            </div>
+        </div>
+        <div>
+            <label for="validationServer01" class="form-label">Gender</label>
+            <input type="text" class="form-control " id="validationServer01" formControlName="gender"
+                [ngClass]="{'is-valid': userFormControl['gender'].valid, 'is-invalid': userFormControl['gender'].invalid && userFormControl['gender'].touched }">
+            <div class="text-danger"
+                *ngIf="userFormControl['gender'].invalid && (isSubmitted || userFormControl['gender'].touched || userFormControl['gender'].dirty)">
+                <div *ngIf="userFormControl['gender'].errors?.['required']">gender is required</div>
+                <div *ngIf="userFormControl['gender'].errors?.['pattern']">Only Alphabets are allowed </div>
+            </div>
+        </div>
+        <div>
+            <label for="validationServer01" class="form-label">DOB</label>
+            <input type="date" class="form-control " id="validationServer01" formControlName="DOB"
+                [ngClass]="{'is-valid': userFormControl['DOB'].valid, 'is-invalid': userFormControl['DOB'].invalid && userFormControl['DOB'].touched }">
+            <div class="text-danger"
+                *ngIf="userFormControl['DOB'].invalid && (isSubmitted || userFormControl['DOB'].touched || userFormControl['DOB'].dirty)">
+                <div *ngIf="userFormControl['DOB'].errors?.['required']">DOB is required</div>
+
+            </div>
+        </div>
+        <div>
+            <label for="validationServer01" class="form-label">Salary</label>
+            <input type="text" class="form-control " id="validationServer01" formControlName="salary"
+                [ngClass]="{'is-valid': userFormControl['salary'].valid, 'is-invalid': userFormControl['salary'].invalid && userFormControl['salary'].touched }">
+            <div class="text-danger"
+                *ngIf="userFormControl['salary'].invalid && (isSubmitted || userFormControl['salary'].touched || userFormControl['salary'].dirty)">
+                <div *ngIf="userFormControl['salary'].errors?.['required']">salary is required</div>
+                <div *ngIf="userFormControl['salary'].errors?.['pattern']">Only numbers are allowed </div>
+            </div>
+        </div>
+
+
+        <div class="col-12 d-flex d-flex justify-content-center w-100 ">
+            <div>
+                <button class="btn btn-primary me-3  " type="submit" (click)="getFormData()" >Submit form</button>
+                <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+    <app-employee-list  [parentdata] = "newdata"   (myOutput)="GetEditValue($event)"></app-employee-list>
+ 
