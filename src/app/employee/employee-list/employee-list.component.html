@@ -1,6 +1,6 @@
 <div class="container mt-5 p-3">
     <table class="table border">
-        <thead>
+        <thead class="text-align-center">
             <th class="tableHead">Name</th>
             <th class="tableHead">Gender</th>
             <th class="tableHead">DOB</th>
@@ -14,8 +14,9 @@
                 <td>{{item.DOB | date:'MMMM d, y'}}</td>
                 <td>{{item.salary | currencyPipe}}</td>
                 <td><button class=" btn btn-success me-2"  (click)="displayDetails(item)">Details</button>
-                    <button class=" btn btn-primary me-2" (click)="EditData(item)" >Edit</button>
-                    <button class=" btn btn-danger"  (click)="deleteRow(item)">Delete</button>
+                    <button class=" btn btn-primary me-2" (click)="EditData(item, item.id)" >Edit</button>
+                    <button class=" btn btn-danger"  (click)="deleteRow(item.id)">Delete</button>
+                 
                 </td>
             </tr>
         </tbody>

@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EmployeeModule } from './employee/employee.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { EmployeeModule } from './employee/employee.module';
     CoreModule,
     UserModule,
     EmployeeModule, 
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
