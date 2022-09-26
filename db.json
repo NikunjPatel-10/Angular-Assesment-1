@@ -9,7 +9,7 @@
     },
     {
       "name": "parth",
-      "gender": "jay",
+      "gender": "male",
       "DOB": "2022-09-04",
       "salary": "23344",
       "id": 6
@@ -18,15 +18,8 @@
       "name": "Nikunj",
       "gender": "male",
       "DOB": "2022-09-10",
-      "salary": "222",
+      "salary": "2000",
       "id": 7
-    },
-    {
-      "name": "almira",
-      "gender": "female",
-      "DOB": "2022-09-21",
-      "salary": "20000",
-      "id": 8
     }
   ],
   "comments": [
