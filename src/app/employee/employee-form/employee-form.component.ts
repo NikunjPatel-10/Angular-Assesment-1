@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
-import { employeedata } from '../employee.modal';
+import { EmployeeData } from '../employee.modal';
 
 @Component({
   selector: 'app-employee-form',
@@ -15,9 +15,9 @@ export class EmployeeFormComponent implements OnInit {
   public isSubmitted: boolean;
   public newdata: any
   public GetData: any
-  public employeedata: employeedata[];
+  public employeedata: EmployeeData[]
   public addBtn: boolean;
-
+  public id: any
 
   constructor(private formbuilder: FormBuilder, private router: Router, public api: ApiService) {
     this.employeedata = [];
@@ -39,6 +39,7 @@ export class EmployeeFormComponent implements OnInit {
   ngOnInit(): void {
 
     this.getApiData();
+
   }
   get userFormControl() {
     return this.userForm.controls;
@@ -78,9 +79,10 @@ export class EmployeeFormComponent implements OnInit {
     this.addBtn = false
     // console.log(editdata);
     // this.newdata = editdata
+    // this.router.navigate(['employee/edit'])
     this.userForm.patchValue(editdata);
     // this.getApiData();
-    console.log(editdata);
+    // console.log(editdata);
 
 
 
